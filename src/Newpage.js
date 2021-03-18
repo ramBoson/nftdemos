@@ -73,12 +73,12 @@ function NewPage() {
     alert("completed");    
     
     
-    alert(localStorage.getItem('myData'));
+    //alert(localStorage.getItem('myData'));
 
 
-    var poda=localStorage.getItem('myData');
+    //var poda=localStorage.getItem('myData');
 
-    setaddress(localStorage.getItem('myData'));
+    //setaddress(localStorage.getItem('myData'));
     
     const abi = [
       {
@@ -1056,19 +1056,19 @@ function NewPage() {
     ];
 
 
-    alert("after abi"+poda);
-    var getaaa=new web3.eth.Contract(abi,poda);
+    //alert("after abi"+poda);
+    //var getaaa=new web3.eth.Contract(abi,poda);
     
-    alert("geta"+getaaa);
+    //alert("geta"+getaaa);
     
     alert("im work a +b"+td+" "+te+" "+tf);
     
     event.preventDefault();
     
      
-      var printgeta=await getaaa.methods.tokenURI(te).call();
+      //var printgeta=await getaaa.methods.tokenURI(te).call();
 
-      setgetaprint(await getaaa.methods.tokenURI(te).call())
+     // setgetaprint(await getaaa.methods.tokenURI(te).call())
 
     
   };
