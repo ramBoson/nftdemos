@@ -16,33 +16,16 @@ function Printallimage() {
 
   const [toaddress,setToaddress] = useState("");
   const [tid,setId] = useState("");
-  //const [turi,setUri] = useState("");
   const [tname,setName] = useState("");
   const [tsymbol,setSymbol] = useState("");
-  //const [tokenuri,setTokenUri] = useState("");
-  //var [getimageurl,setgetImage] = useState("");
-  //const [tfile,setTfile] = useState("");
+
   const [ipfsHash,setIpfsHash] = useState(null);
-  //var [buffer,setBuffer] = useState("");
-  //const [ethAddress,setEthAddress] = useState("");
-  //const [blockNumber,setBlocknumber] = useState("");
-  //const [transactionHash,setTransaction] = useState("");
-  //const [gasUsed,setGasUsed] = useState("");
-  //const [txReceipt,se] = useState("");
-
-  //const [dataset,setdatas] = useState("");
-
+  
   const [address,setaddress] = useState("");
-  //const [geta,setgeta] = useState("");
-
-  //var [printgeta,setgetaprint] =useState("");
-  //var [printgeta2,setgetaprint2] =useState("");
-
-  //var [printgeta3,setgetaprint3] =useState("");
+  
   var [printgeta4,setgetaprint4] =useState("");
 
   var [selectedImages,setSelectedImages] = useState([]);
-
 
   const [imgurl,setimgurl] = useState([]);
 
@@ -52,28 +35,7 @@ function Printallimage() {
   
 
   const names = [];
-  //const namesc = [];
-
-  //const edho = (source) =>{
-    //  return  selectedImages.map((photo) => {
-      //    return <img src={photo} key={photo}/>
-
-      //})
-    //};
-        
-      
   
-    
-      //new write below
-
-      //const componentDidMount = () =>(event){
-        
-        // your source code to load initial data
-
-        
-   // }
-
-
       const onSubmitNFT = async (event) => {
     
     
@@ -99,12 +61,8 @@ function Printallimage() {
     alert("completed");    
     
     
-    //alert(localStorage.getItem('myData'));
 
-
-    //var poda=localStorage.getItem(0x6B35819e9bF32Dce6408Cc062673d4B11d356bd9);
-
-    setaddress('0x6B35819e9bF32Dce6408Cc062673d4B11d356bd9');
+    //setaddress('0x6B35819e9bF32Dce6408Cc062673d4B11d356bd9');
     
     const abi = [
       {
@@ -1082,14 +1040,14 @@ function Printallimage() {
     ];
 
 
-    alert("after abi"+'0x6B35819e9bF32Dce6408Cc062673d4B11d356bd9');
+    //alert("after abi"+'0x6B35819e9bF32Dce6408Cc062673d4B11d356bd9');
     var getaaa=new web3.eth.Contract(abi,'0x6B35819e9bF32Dce6408Cc062673d4B11d356bd9');
     
     
 
-    alert("geta"+getaaa);
+    //alert("geta"+getaaa);
     
-    alert("im work a +b"+td+" "+te+" "+tf);
+    //alert("im work a +b"+td+" "+te+" "+tf);
     
     event.preventDefault();
     
@@ -1111,11 +1069,7 @@ function Printallimage() {
      
       var printgeta=await getaaa.methods.tokenURI(654).call();
 
-      //setgetaprint(await getaaa.methods.tokenURI(654).call())
-
-     // setgetaprint2(await getaaa.methods.tokenURI(657).call())
-
-      //setgetaprint3(await getaaa.methods.tokenURI(3214).call())
+    
 
       setgetaprint4(await getaaa.methods.tokenURI(i).call())
 
@@ -1136,27 +1090,9 @@ function Printallimage() {
 
 
 
-    
-
-
-      //for(var i=0;i<=names.length;i++){
-
-        //var a=document.createElement("img")
-
-        //a.src=names[i]
-
-       // document.getElementById("prag").append(a)
-
-     // }
-      
-
-
       setSelectedImages(printgeta);
 
 
-    //settodos(await getaaa.methods.tokenURI(i).call());
-
-    //this.setState({todos});
 
     }
 
