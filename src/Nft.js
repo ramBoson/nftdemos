@@ -3,11 +3,10 @@ import {useState} from 'react';
 import web3 from './web3';
 import lottery from './nftcontract';//this line import lottery folder
 import ipfs from './ipfs';
-//import storehash from './storehash';
+
 import { Router, Route, Switch } from "react-router-dom";
 import history from "./utils/history";
-//import First from "./First";
-//import Second from "./Second";
+
 import NewPage from './Newpage';
 import Tokencreate from './Tokencreate';
 import PrintallImage from './Printallimage';
@@ -26,17 +25,12 @@ function App() {
   //const [tfile,setTfile] = useState("");
   const [ipfsHash,setIpfsHash] = useState(null);
   var [buffer,setBuffer] = useState("");
-  //const [ethAddress,setEthAddress] = useState("");
-  //const [blockNumber,setBlocknumber] = useState("");
-  //const [transactionHash,setTransaction] = useState("");
-  //const [gasUsed,setGasUsed] = useState("");
-  //const [txReceipt,se] = useState("");
 
 
   //start
 
 
-  const captureFile =(event) => {
+      const captureFile =(event) => {
     event.stopPropagation()
     event.preventDefault()
     const file = event.target.files[0]
@@ -1104,7 +1098,7 @@ const onSubmitImage = async (event) => {
     
     alert("im work a +b"+td+" "+te+" "+tf);
     
-    event.preventDefault();
+    //event.preventDefault();
     
     //const accounts = await web3.eth.getAccounts();
     
@@ -1121,14 +1115,14 @@ const onSubmitImage = async (event) => {
     });
     
     
-    alert(" and "+tid +" and "+te+"and   data   ");
+    //alert(" and "+tid +" and "+te+"and   data   ");
     
     
-    alert(localStorage.getItem('myData'));
+    //alert(localStorage.getItem('myData'));
     
     
     
-    alert("NFT NAME    "+ta+"   NFT SYMBOL    "+tb+"    TOKEN URI    "+tc+"   TOKEN ADDRESS    "+td+"    TOKEN ID   "+te+"  TOKEN URI  "+tf);
+    //alert("NFT NAME    "+ta+"   NFT SYMBOL    "+tb+"    TOKEN URI    "+tc+"   TOKEN ADDRESS    "+td+"    TOKEN ID   "+te+"  TOKEN URI  "+tf);
     
     
     
@@ -1137,7 +1131,7 @@ const onSubmitImage = async (event) => {
       //end above
     
     
-      alert("waiting for data clear");
+      //alert("waiting for data clear");
     
     
   };
