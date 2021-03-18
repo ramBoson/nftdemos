@@ -1066,7 +1066,7 @@ function NewPage() {
     event.preventDefault();
     
      
-      //var printgeta=await getaaa.methods.tokenURI(te).call();
+      var printgeta=await getaaa.methods.tokenURI(te).call();
 
       setgetaprint(await getaaa.methods.tokenURI(te).call())
 
