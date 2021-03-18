@@ -46,14 +46,9 @@ function NewPage() {
 
   //var [todos,settodos] = useState("");
 
+  //const names = [];
 
-
-  const names = [];
-    
-      //new write below
-
-
-      const onSubmitNFT = async (event) => {
+    const onSubmitNFT = async (event) => {
     
     
       alert("waiting for pic url");
@@ -67,7 +62,7 @@ function NewPage() {
       
       
     
-      alert("im work ta tb tc  td te tf  "+ta+" "+tb+" "+tc+" "+td+" "+te+" "+tf);
+      //alert("im work ta tb tc  td te tf  "+ta+" "+tb+" "+tc+" "+td+" "+te+" "+tf);
     
       event.preventDefault();
     
@@ -1064,87 +1059,20 @@ function NewPage() {
     alert("after abi"+poda);
     var getaaa=new web3.eth.Contract(abi,poda);
     
-    
-
     alert("geta"+getaaa);
     
     alert("im work a +b"+td+" "+te+" "+tf);
     
     event.preventDefault();
     
-    //const accounts = await web3.eth.getAccounts();
-    
-    
-    
-    //await geta.methods.tokenURI(te).send({
-    //from: accounts[0]
-    //value: this.setState({c:accounts[0]})
-    
-    //});
-
-
-    //for(var i=653;i<=657;i++){
-
      
-      var printgeta=await getaaa.methods.tokenURI(te).call();
+      //var printgeta=await getaaa.methods.tokenURI(te).call();
 
       setgetaprint(await getaaa.methods.tokenURI(te).call())
 
-      //names.push(printgeta);
-
-
-      
-  
-
-    //settodos(await getaaa.methods.tokenURI(i).call());
-
-    //this.setState({todos});
-
-    //}
-
-
-    //alert(names.length);
-
-
-    //for(var i=0;i<names.length;i++){
-
-      //setgetaprint(names[i]);
-
-      //alert(names[i]);
-
-    //}
-
-    
-
-    //console.log('b',todos);
-
-
-
-
-    //localStorage.setItem('prints',printgeta);
-
-
-    alert("printgeta"+printgeta);
-
-    alert("data print"+printgeta);
-  
-
-    
-    
-    alert(" and "+tid +" and "+te+"and   data   ");
-    
-    
-    
-    
-    
     
   };
     
-
-  
-
-
-  //</div><td><img src={localStorage.getItem('myimageuri')}  alt={'C - language'} /> 			
   return (
     <div className="App">
       
