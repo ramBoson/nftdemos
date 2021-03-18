@@ -2,11 +2,11 @@ import React from "react";
 import { Router, Route, Switch } from "react-router-dom";
 import history from "./utils/history";
 
-import Nf from "./Nft";
-import NewPage from "./Newpage";
-import Sendpage from "./Sendpage";
-import Tokencreate from "./Tokencreate";
-import Printallimage from "./Printallimage";
+//import Nf from "./Nft";
+//import NewPage from "./Newpage";
+//import Sendpage from "./Sendpage";
+//import Tokencreate from "./Tokencreate";
+//import Printallimage from "./Printallimage";
 
 
 function App() {
@@ -82,21 +82,7 @@ function App() {
 
             </Route>
             
-            <Route path="/Nft">
-              <Nf />
-            </Route>
-            <Route path="/Newpage">
-              <NewPage />
-            </Route>
-            <Route path="/Sendpage">
-              <Sendpage />
-            </Route>
-            <Route path="/Tokencreate">
-              <Tokencreate />
-            </Route>
-            <Route path="/Printallimage">
-              <Printallimage />
-            </Route>
+            
           </Switch>
         </Router>
         </center>
