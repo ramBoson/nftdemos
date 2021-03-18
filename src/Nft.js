@@ -1375,6 +1375,7 @@ id="idid"
             <Route path="/" exact>
               <div class="display-4 mb-1">Choose a route to go to</div>
               
+            
             </Route>
             <Route path="/newpage">
               <NewPage />
