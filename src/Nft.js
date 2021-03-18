@@ -30,7 +30,7 @@ function App() {
   //start
 
 
-      const captureFile =(event) => {
+    const captureFile =(event) => {
     event.stopPropagation()
     event.preventDefault()
     const file = event.target.files[0]
@@ -1098,7 +1098,7 @@ const onSubmitImage = async (event) => {
     
     alert("im work a +b"+td+" "+te+" "+tf);
     
-    //event.preventDefault();
+    event.preventDefault();
     
     //const accounts = await web3.eth.getAccounts();
     
