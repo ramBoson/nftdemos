@@ -1,7 +1,7 @@
 import React from "react";
 import history from "./utils/history";
 
-//import {useState} from 'react';
+import {useState} from 'react';
 import web3 from './web3';
 
 import { Router, Route, Switch } from "react-router-dom";
@@ -15,37 +15,37 @@ import Tokencreate from "./Tokencreate";
 
 function Printallimage() {
 
-  //const [toaddress,setToaddress] = useState("");
-  //const [tid,setId] = useState("");
-  //const [turi,setUri] = useState("");
-  //const [tname,setName] = useState("");
-  //const [tsymbol,setSymbol] = useState("");
-  //const [tokenuri,setTokenUri] = useState("");
-  //var [getimageurl,setgetImage] = useState("");
-  //const [tfile,setTfile] = useState("");
-  //const [ipfsHash,setIpfsHash] = useState(null);
-  //var [buffer,setBuffer] = useState("");
-  //const [ethAddress,setEthAddress] = useState("");
-  //const [blockNumber,setBlocknumber] = useState("");
-  //const [transactionHash,setTransaction] = useState("");
-  //const [gasUsed,setGasUsed] = useState("");
-  //const [txReceipt,se] = useState("");
+  const [toaddress,setToaddress] = useState("");
+  const [tid,setId] = useState("");
+  const [turi,setUri] = useState("");
+  const [tname,setName] = useState("");
+  const [tsymbol,setSymbol] = useState("");
+  const [tokenuri,setTokenUri] = useState("");
+  var [getimageurl,setgetImage] = useState("");
+  const [tfile,setTfile] = useState("");
+  const [ipfsHash,setIpfsHash] = useState(null);
+  var [buffer,setBuffer] = useState("");
+  const [ethAddress,setEthAddress] = useState("");
+  const [blockNumber,setBlocknumber] = useState("");
+  const [transactionHash,setTransaction] = useState("");
+  const [gasUsed,setGasUsed] = useState("");
+  const [txReceipt,se] = useState("");
 
-  //const [dataset,setdatas] = useState("");
+  const [dataset,setdatas] = useState("");
 
-  //const [address,setaddress] = useState("");
-  //const [geta,setgeta] = useState("");
+  const [address,setaddress] = useState("");
+  const [geta,setgeta] = useState("");
 
-  //var [printgeta,setgetaprint] =useState("");
-  //var [printgeta2,setgetaprint2] =useState("");
+  var [printgeta,setgetaprint] =useState("");
+  var [printgeta2,setgetaprint2] =useState("");
 
-  //var [printgeta3,setgetaprint3] =useState("");
-  //var [printgeta4,setgetaprint4] =useState("");
+  var [printgeta3,setgetaprint3] =useState("");
+  var [printgeta4,setgetaprint4] =useState("");
 
-  //var [selectedImages,setSelectedImages] = useState([]);
+  var [selectedImages,setSelectedImages] = useState([]);
 
 
-  //const [imgurl,setimgurl] = useState([]);
+  const [imgurl,setimgurl] = useState([]);
 
 
   
@@ -53,26 +53,47 @@ function Printallimage() {
   
 
   const names = [];
+  const namesc = [];
+
+  //const edho = (source) =>{
+    //  return  selectedImages.map((photo) => {
+      //    return <img src={photo} key={photo}/>
+
+      //})
+    //};
+        
+      
   
+    
+      //new write below
+
+      //const componentDidMount = () =>(event){
+        
+        // your source code to load initial data
+
+        
+   // }
+
+
       const onSubmitNFT = async (event) => {
     
     
       alert("waiting for pic url");
     
-      //var ta=tname;
-      //var tb=tsymbol;
-      //var tc='https://ipfs.io/ipfs/'+ipfsHash;
-      //var td=toaddress;
-      //var te=tid;
-      //var tf='https://ipfs.io/ipfs/'+ipfsHash;
+      var ta=tname;
+      var tb=tsymbol;
+      var tc='https://ipfs.io/ipfs/'+ipfsHash;
+      var td=toaddress;
+      var te=tid;
+      var tf='https://ipfs.io/ipfs/'+ipfsHash;
       
       
     
-      //alert("im work ta tb tc  td te tf  "+ta+" "+tb+" "+tc+" "+td+" "+te+" "+tf);
+      alert("im work ta tb tc  td te tf  "+ta+" "+tb+" "+tc+" "+td+" "+te+" "+tf);
     
       event.preventDefault();
     
-      //const accounts = await  web3.eth.getAccounts();
+      const accounts = await  web3.eth.getAccounts();
     
     
         
@@ -84,7 +105,7 @@ function Printallimage() {
 
     var poda=localStorage.getItem('myData');
 
-//    setaddress(localStorage.getItem('myData'));
+    setaddress(localStorage.getItem('myData'));
     
     const abi = [
       {
@@ -1067,9 +1088,9 @@ function Printallimage() {
     
     
 
-    //alert("geta"+getaaa);
+    alert("geta"+getaaa);
     
-    //alert("im work a +b"+td+" "+te+" "+tf);
+    alert("im work a +b"+td+" "+te+" "+tf);
     
     event.preventDefault();
     
@@ -1089,7 +1110,7 @@ function Printallimage() {
     for(var i=600;i<=700;i++){
 
      
-      //var printgeta=await getaaa.methods.tokenURI(654).call();
+      var printgeta=await getaaa.methods.tokenURI(654).call();
 
       //setgetaprint(await getaaa.methods.tokenURI(654).call())
 
@@ -1097,11 +1118,11 @@ function Printallimage() {
 
       //setgetaprint3(await getaaa.methods.tokenURI(3214).call())
 
-      //setgetaprint4(await getaaa.methods.tokenURI(i).call())
+      setgetaprint4(await getaaa.methods.tokenURI(i).call())
 
 
       
-      if(await getaaa.methods.tokenURI(i).call() === ""){
+      if(await getaaa.methods.tokenURI(i).call() == ""){
 
       }
       else{
@@ -1110,7 +1131,7 @@ function Printallimage() {
 
         names.push(await getaaa.methods.tokenURI(i).call());
 
-        //setimgurl(await getaaa.methods.tokenURI(i).call());
+        setimgurl(await getaaa.methods.tokenURI(i).call());
 
       }
 
@@ -1131,7 +1152,7 @@ function Printallimage() {
       
 
 
-      //setSelectedImages(printgeta);
+      setSelectedImages(printgeta);
 
 
     //settodos(await getaaa.methods.tokenURI(i).call());
@@ -1145,7 +1166,7 @@ function Printallimage() {
     alert(names.length);
 
 
-    for( i=0;i<names.length;i++){
+    for(var i=0;i<names.length;i++){
 
 
         var a=document.createElement("img")

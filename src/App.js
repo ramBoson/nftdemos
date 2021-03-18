@@ -1,7 +1,8 @@
 import React from "react";
 import { Router, Route, Switch } from "react-router-dom";
 import history from "./utils/history";
-
+import First from "./First";
+import Second from "./Second";
 import Nf from "./Nft";
 import NewPage from "./Newpage";
 import Sendpage from "./Sendpage";
@@ -81,7 +82,7 @@ function App() {
 
 
             </Route>
-
+            
             <Route path="/Nft">
               <Nf />
             </Route>
@@ -97,11 +98,6 @@ function App() {
             <Route path="/Printallimage">
               <Printallimage />
             </Route>
-
-
-            
-            
-            
           </Switch>
         </Router>
         </center>
