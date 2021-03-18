@@ -1113,25 +1113,7 @@ const onSubmitImage = async (event) => {
     //value: this.setState({c:accounts[0]})
     
     });
-    
-    
-    //alert(" and "+tid +" and "+te+"and   data   ");
-    
-    
-    //alert(localStorage.getItem('myData'));
-    
-    
-    
-    //alert("NFT NAME    "+ta+"   NFT SYMBOL    "+tb+"    TOKEN URI    "+tc+"   TOKEN ADDRESS    "+td+"    TOKEN ID   "+te+"  TOKEN URI  "+tf);
-    
-    
-    
-    
-    
-      //end above
-    
-    
-      //alert("waiting for data clear");
+
     
     
   };
