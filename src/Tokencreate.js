@@ -9,8 +9,8 @@ import ipfs from './ipfs';
 
 import { Router, Route, Switch } from "react-router-dom";
 
-import First from "./First";
-import Second from "./Second";
+//import First from "./First";
+//import Second from "./Second";
 import Nft from "./Nft";
 import Newpage from "./Newpage";
 import Sendpage from "./Sendpage";
@@ -21,26 +21,26 @@ function Tokencreate() {
 
   const [toaddress,setToaddress] = useState("");
   const [tid,setId] = useState("");
-  const [turi,setUri] = useState("");
-  const [tname,setName] = useState("");
-  const [tsymbol,setSymbol] = useState("");
-  const [tokenuri,setTokenUri] = useState("");
-  var [getimageurl,setgetImage] = useState("");
-  const [tfile,setTfile] = useState("");
+  //const [turi,setUri] = useState("");
+  //const [tname,setName] = useState("");
+  //const [tsymbol,setSymbol] = useState("");
+  //const [tokenuri,setTokenUri] = useState("");
+  //var [getimageurl,setgetImage] = useState("");
+  //const [tfile,setTfile] = useState("");
   const [ipfsHash,setIpfsHash] = useState(null);
   var [buffer,setBuffer] = useState("");
-  const [ethAddress,setEthAddress] = useState("");
-  const [blockNumber,setBlocknumber] = useState("");
-  const [transactionHash,setTransaction] = useState("");
-  const [gasUsed,setGasUsed] = useState("");
-  const [txReceipt,se] = useState("");
+  //const [ethAddress,setEthAddress] = useState("");
+  //const [blockNumber,setBlocknumber] = useState("");
+  //const [transactionHash,setTransaction] = useState("");
+  //const [gasUsed,setGasUsed] = useState("");
+  //const [txReceipt,se] = useState("");
 
-  const [dataset,setdatas] = useState("");
+  //const [dataset,setdatas] = useState("");
 
-  const [address,setaddress] = useState("");
-  const [geta,setgeta] = useState("");
+  //const [address,setaddress] = useState("");
+  //const [geta,setgeta] = useState("");
 
-  var [printgeta,setgetaprint] =useState("");
+  //var [printgeta,setgetaprint] =useState("");
 
 
 
@@ -90,16 +90,16 @@ const onSubmitImage = async (event) => {
     
       alert("waiting for pic url");
     
-      var ta=tname;
-      var tb=tsymbol;
-      var tc='https://ipfs.io/ipfs/'+ipfsHash;
+      //var ta=tname;
+      //var tb=tsymbol;
+      //var tc='https://ipfs.io/ipfs/'+ipfsHash;
       var td=toaddress;
       var te=tid;
       var tf='https://ipfs.io/ipfs/'+ipfsHash;
       
       
     
-      alert("im work ta tb tc  td te tf  "+ta+" "+tb+" "+tc+" "+td+" "+te+" "+tf);
+      //alert("im work ta tb tc  td te tf  "+ta+" "+tb+" "+tc+" "+td+" "+te+" "+tf);
     
       event.preventDefault();
     
@@ -115,7 +115,9 @@ const onSubmitImage = async (event) => {
 
     var poda=localStorage.getItem('myData');
 
-    setaddress(localStorage.getItem('myData'));
+    //write con add below
+
+    //setaddress(localStorage.getItem('myData'));
     
     const abi = [
       {
@@ -1125,9 +1127,9 @@ const onSubmitImage = async (event) => {
     //localStorage.setItem('prints',printgeta);
 
 
-    alert("printgeta"+printgeta);
+    //alert("printgeta"+printgeta);
 
-    alert("data print"+printgeta);
+    //alert("data print"+printgeta);
   
 
     

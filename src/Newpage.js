@@ -3,14 +3,10 @@ import history from "./utils/history";
 
 import {useState} from 'react';
 import web3 from './web3';
-import lottery from './nftcontract';//this line import lottery folder
-import ipfs from './ipfs';
-import storehash from './storehash';
 
 import { Router, Route, Switch } from "react-router-dom";
 
-import First from "./First";
-import Second from "./Second";
+
 import Nft from "./Nft";
 import Sendpage from "./Sendpage";
 import Tokencreate from "./Tokencreate";
@@ -21,26 +17,26 @@ import Printallimage from "./Printallimage";
 
 function NewPage() {
 
-  const [toaddress,setToaddress] = useState("");
+  //const [toaddress,setToaddress] = useState("");
   const [tid,setId] = useState("");
-  const [turi,setUri] = useState("");
-  const [tname,setName] = useState("");
-  const [tsymbol,setSymbol] = useState("");
-  const [tokenuri,setTokenUri] = useState("");
-  var [getimageurl,setgetImage] = useState("");
-  const [tfile,setTfile] = useState("");
-  const [ipfsHash,setIpfsHash] = useState(null);
-  var [buffer,setBuffer] = useState("");
-  const [ethAddress,setEthAddress] = useState("");
-  const [blockNumber,setBlocknumber] = useState("");
-  const [transactionHash,setTransaction] = useState("");
-  const [gasUsed,setGasUsed] = useState("");
-  const [txReceipt,se] = useState("");
+  //const [turi,setUri] = useState("");
+  //const [tname,setName] = useState("");
+  //const [tsymbol,setSymbol] = useState("");
+  //const [tokenuri,setTokenUri] = useState("");
+  //var [getimageurl,setgetImage] = useState("");
+  //const [tfile,setTfile] = useState("");
+  //const [ipfsHash,setIpfsHash] = useState(null);
+  //var [buffer,setBuffer] = useState("");
+  //const [ethAddress,setEthAddress] = useState("");
+  //const [blockNumber,setBlocknumber] = useState("");
+  //const [transactionHash,setTransaction] = useState("");
+  //const [gasUsed,setGasUsed] = useState("");
+  //const [txReceipt,se] = useState("");
 
-  const [dataset,setdatas] = useState("");
+  //const [dataset,setdatas] = useState("");
 
-  const [address,setaddress] = useState("");
-  const [geta,setgeta] = useState("");
+  //const [address,setaddress] = useState("");
+  //const [geta,setgeta] = useState("");
 
   var [printgeta,setgetaprint] =useState("");
 
@@ -48,7 +44,7 @@ function NewPage() {
 
 
 
-  const names = [];
+  //const names = [];
     
       //new write below
 
@@ -58,20 +54,20 @@ function NewPage() {
     
       alert("waiting for pic url");
     
-      var ta=tname;
-      var tb=tsymbol;
-      var tc='https://ipfs.io/ipfs/'+ipfsHash;
-      var td=toaddress;
+      //var ta=tname;
+      //var tb=tsymbol;
+      //var tc='https://ipfs.io/ipfs/'+ipfsHash;
+      //var td=toaddress;
       var te=tid;
-      var tf='https://ipfs.io/ipfs/'+ipfsHash;
+      //var tf='https://ipfs.io/ipfs/'+ipfsHash;
       
       
     
-      alert("im work ta tb tc  td te tf  "+ta+" "+tb+" "+tc+" "+td+" "+te+" "+tf);
+      //alert("im work ta tb tc  td te tf  "+ta+" "+tb+" "+tc+" "+td+" "+te+" "+tf);
     
       event.preventDefault();
     
-      const accounts = await  web3.eth.getAccounts();
+      //const accounts = await  web3.eth.getAccounts();
     
     
         
@@ -83,7 +79,10 @@ function NewPage() {
 
     var poda=localStorage.getItem('myData');
 
-    setaddress(localStorage.getItem('myData'));
+
+    //add con address
+
+    //setaddress(localStorage.getItem('myData'));
     
     const abi = [
       {
@@ -1068,7 +1067,7 @@ function NewPage() {
 
     alert("geta"+getaaa);
     
-    alert("im work a +b"+td+" "+te+" "+tf);
+    //alert("im work a +b"+td+" "+te+" "+tf);
     
     event.preventDefault();
     
