@@ -1134,7 +1134,7 @@ function Sendpage() {
 <h1>Transfer NFT-Owner </h1>
 
 		<form onSubmit={onSubmitNFT} id="create-course-form" >
-
+<label>enter token id    </label>
 
 <input
 id="idid"
@@ -1148,7 +1148,7 @@ id="idid"
 <br></br>
 <br></br>
 
-
+<label>enter transfer address</label>
 <input
 id="idids"
   type='text'
