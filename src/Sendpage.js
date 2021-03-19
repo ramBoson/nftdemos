@@ -75,7 +75,10 @@ function Sendpage() {
     alert(localStorage.getItem('myData'));
 
 
-    var poda=localStorage.getItem('myData');
+    //var poda=localStorage.getItem('myData');
+
+
+    var poda ='0x6b35819e9bf32dce6408cc062673d4b11d356bd9';
 
     //below con add
 
