@@ -104,16 +104,21 @@ const onSubmitImage = async (event) => {
       event.preventDefault();
     
       const accounts = await  web3.eth.getAccounts();
+
+
+      var poda ='0x6b35819e9bf32dce6408cc062673d4b11d356bd9';
     
     
         
     alert("completed");    
     
     
-    alert(localStorage.getItem('myData'));
+    alert(poda);
 
 
-    var poda=localStorage.getItem('myData');
+    //var poda=localStorage.getItem('myData');
+
+    
 
     //write con add below
 
