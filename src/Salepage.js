@@ -1158,14 +1158,18 @@ function Salepage() {
 
       var j=0;
 
-      for(k=0;k<afternames.length;k++){
+      var b;
 
-        
+      for(k=0;k<afternames.length;k++){
 
         var a=document.createElement("img")
 
+        b=document.createElement("button")
 
-        var b=document.createElement("button")
+        b.id=afternames[k]
+
+        
+        //alert(b.id)
 
         b.widt=500
         b.height=500
@@ -1179,44 +1183,41 @@ function Salepage() {
         document.getElementById("ram").append(b)
 
 
+        b.onclick = () =>{
+
+        
+          alert(this.id)
+        }
 
         a.onclick = () =>{
-
             alert("image click"+afternames[j])
+
         }
+      
+        //b.onclick = () => {
 
-        
-        
-
-        b.onclick = () => {
-
-
-            alert("onclick work"+afternames[i]);
+          //  alert("onclick work"+afternames[j]);
+//            salesave.push()
 
 
-            salesave.push()
-
-            
-               
-        }
-
-        
-        
-        
-
-
+        //}
       //setgetaprint(names[i]);
 
       //alert(names[i]);
       //alert(selectedImages[i]);
 
-    }
-    
+    }  
 
+    <script type='text/javascript'>
+    function check() {
+        //return false;
+
+        alert("hello check")
+    }
+    </script>
    
 }
-    
-
+  
 
   return (    
 
@@ -1356,8 +1357,8 @@ function Salepage() {
     </div>
 
 
-        
 
+    
 	  
       </div>      
   );
