@@ -1127,7 +1127,7 @@ function Salepage() {
 
       }
 
-      alert("split owner address  "+printgeta.length)
+      //alert("split owner address  "+printgeta.length)
 
       alert("owner address"+printgeta)
 
@@ -1156,43 +1156,45 @@ function Salepage() {
       }
 
 
-      var j=0;
+      //var j=0;
 
-      var b;
+      //var b;
 
-      for(k=0;k<afternames.length;k++){
+//      for(k=0;k<afternames.length;k++){
 
-        var a=document.createElement("img")
+        //var a=document.createElement("img")
 
-        b=document.createElement("button")
+        //b=document.createElement("button")
 
-        b.id=afternames[k]
+        //a.id=afternames[k]
 
         
         //alert(b.id)
 
-        b.widt=500
-        b.height=500
+        //b.widt=500
+        //b.height=500
 
-        a.src=afternames[k]
-        a.width=400
-        a.height=400
+        //a.src=afternames[k]
+        //a.width=400
+        //a.height=400
 
-        document.getElementById("prag").append(a)
+        //document.getElementById("prag").append(a)
 
-        document.getElementById("ram").append(b)
+        //document.getElementById("ram").append(b)
 
 
-        b.onclick = () =>{
+        //b.onclick = () =>{
 
         
-          alert(this.id)
-        }
+          //alert(this.event.id)
+        //}
 
-        a.onclick = () =>{
-            alert("image click"+afternames[j])
+        //a.onclick = () =>{
+            //alert("image click"+afternames[j])
+            //alert(afternames[j])
 
-        }
+
+        //}
       
         //b.onclick = () => {
 
@@ -1206,16 +1208,123 @@ function Salepage() {
       //alert(names[i]);
       //alert(selectedImages[i]);
 
-    }  
+    //}  
 
-    <script type='text/javascript'>
-    function check() {
-        //return false;
 
-        alert("hello check")
-    }
-    </script>
    
+
+    
+   
+}
+
+function hello(event){
+
+  alert(afternames.length)
+
+  for(var i=0 ;i<afternames.length;i++)
+  {
+
+
+      var a=document.createElement("img")
+
+      var  b=document.createElement("button")
+
+      var  c=document.createElement("li")
+
+      var  d=document.createElement("li")
+
+      var  ebr=document.createElement("br")
+
+
+
+        //a.id=afternames[k]
+
+        
+        //alert(b.id)
+
+        //b.widt=500
+        //b.height=500
+        //b.setAttribute("value",)
+
+
+        b.innerHTML="button"+i+1;
+    
+
+        a.src=afternames[i]
+        a.id=afternames[i]
+        a.width=400
+        a.height=400
+
+
+        b.id=afternames[i]
+
+        c.style.listStyleType="none"
+        c.append(a)
+        c.append(ebr)
+        c.append(b)        
+
+        document.getElementById("prag").append(c)
+
+        document.getElementById("prag").append(ebr)
+
+
+        document.getElementById("prag").append(d)
+
+        document.getElementById("ram").append(c)
+
+
+        a.onclick = (event) =>{
+
+        
+          hello1(event.target.id)
+
+          alert(event.target.id)
+        }
+
+        b.onclick = (event) =>{
+
+        
+          alert(event.target.id)
+        }
+
+        
+    //alert(afternames[i])
+
+
+
+  }
+
+
+  function hello1(getvalue){
+
+    alert(getvalue)
+
+  }
+
+  //var a=document.createElement("img")
+
+  //var b=document.createElement("button")
+
+
+
+
+  //b.widt=500
+    //    b.height=500
+
+      //  a.src=afternames[i]
+//        a.width=400
+  //      a.height=400
+
+    ///    document.getElementById("prag").append(a)
+
+       // document.getElementById("ram").append(b)
+
+
+
+  //const id=event.target.id;
+  //alert(id)
+
+//}
 }
   
 
@@ -1299,6 +1408,8 @@ function Salepage() {
 
 
 
+
+
       
 <br></br>
 <br></br>
@@ -1346,17 +1457,22 @@ function Salepage() {
 
 
 
-<div id="prag">
 
 
-
-</div>
-
-<div id="ram" >
-
-    </div>
+<button id="ramm" onClick={hello}>click button</button>
 
 
+    
+
+
+<ul id="prag">
+
+
+</ul>
+
+<ul id="ram" >
+  
+</ul>
 
     
 	  
