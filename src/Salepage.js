@@ -1,4 +1,4 @@
-import React, { useState ,useEffect} from "react";
+import React, { useState } from "react";
 import history from "./utils/history";
 
 //import {useState} from 'react';
@@ -248,19 +248,14 @@ function Salepage() {
    
 }
 
-function Hello(event){
-	
+function hello(event){
 
   alert(afternames.length)
-  useEffect(() => {    
-    // Update the document title using the browser API    
-    document.title = `You clicked ${afternames.length} times`;  
-  });
 
   for(var i=0 ;i<afternames.length;i++)
   {
 
-      if(pp[i]==afternames[i]){alert("deleted")}
+     
 
       var a=document.createElement("img")
       
@@ -282,7 +277,7 @@ function Hello(event){
         //b.widt=500
         //b.height=500
         //b.setAttribute("value",)
-	
+
 
         b.innerHTML="Enable Sale";
     
@@ -383,7 +378,6 @@ function Hello(event){
   return (    
 
     <div className="App">
-
 
 
 <h1>Print Your NFT Image</h1>
@@ -512,7 +506,7 @@ function Hello(event){
 
 
 
-<button id="ramm" onClick={Hello}>click button</button>
+<button id="ramm" onClick={hello}>click button</button>
 
 
     
