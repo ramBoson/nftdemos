@@ -1,7 +1,7 @@
 import './App.css';
 import {useState} from 'react';
 import web3 from './web3';
-import lottery from './nftcontract';//this line import lottery folder
+import lottery from './nftcontract';
 import ipfs from './ipfs';
 //import storehash from './storehash';
 import { Router, Route, Switch } from "react-router-dom";
@@ -14,27 +14,16 @@ import PrintallImage from './Printallimage';
 import Sendpage from './Sendpage';
 
 
-function App() {
+function Nft() {
 
   const [toaddress,setToaddress] = useState("");
   const [tid,setId] = useState("");
-  //const [turi,setUri] = useState("");
+  
   const [tname,setName] = useState("");
   const [tsymbol] = useState("");
-  //const [tokenuri,setTokenUri] = useState("");
-  //var [getimageurl,setgetImage] = useState("");
-  //const [tfile,setTfile] = useState("");
   const [ipfsHash,setIpfsHash] = useState(null);
   var [buffer,setBuffer] = useState("");
-  //const [ethAddress,setEthAddress] = useState("");
-  //const [blockNumber,setBlocknumber] = useState("");
-  //const [transactionHash,setTransaction] = useState("");
-  //const [gasUsed,setGasUsed] = useState("");
-  //const [txReceipt,se] = useState("");
-
-
-  //start
-
+  
 
   const captureFile =(event) => {
     event.stopPropagation()
@@ -1443,7 +1432,7 @@ id="idid"
               
             
             </Route>
-            <Route path="/newpage">
+            <Route path="/newpage" component={NewPage}>
               <NewPage />
             </Route>
             <Route path="/tokenpage">
@@ -1463,4 +1452,4 @@ id="idid"
   );
 }
 
-export default App;
+export default Nft;

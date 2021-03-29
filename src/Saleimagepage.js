@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import history from "./utils/history";
 
 //import {useState} from 'react';
@@ -18,48 +18,48 @@ function Saleimagepage() {
  
 
   
-
-      const onSubmitNFT = async (event) => {
-      alert("waiting for pic url");
-      event.preventDefault();    
+  useEffect(()=>{onSubmitNFT()},[])
+      const onSubmitNFT = async () => {
+      console.log("waiting for pic url");
+     // event.preventDefault();    
         var names =[];
         var ima =[];
         var p =[];
-    alert("geta"+getaaa);
+    
    
-    event.preventDefault();
+    //event.preventDefault();
     
     const accounts = await web3.eth.getAccounts();
 
-    alert(accounts[0])
+    
     
     var items = await getaaa.methods.totalSupply().call();
-      alert(items)
+      
       for(var i=0;i<items;i++){
         var v = await getaaa.methods.tokenByIndex(i).call();
-        alert("id" + v)
+       
         var s = await getaaa.methods.items(v).call();
         var state = s.state;
         if(state == 1){
           names.push(v)
-          alert("For Sale" + v)
+          
           p.push(s.price)
         }
         
       }
    
-    for(var i=0;i<names.length;i++){
+    for( i=0;i<names.length;i++){
       
 
       ima.push(await getaaa.methods.tokenURI(names[i]).call());
-      alert(names[i])
+      
       var a=document.createElement("img");
       var  b=document.createElement("button")
       var t = document.createElement("textarea")
 
       var  c=document.createElement("li")
 
-      var  d=document.createElement("li")
+     
 
       var  ebr=document.createElement("br")
 
@@ -81,19 +81,19 @@ function Saleimagepage() {
       c.append(t)
       c.append(ebr)
       c.append(b)
-      alert("wait for displaying images")
+      console.log("wait for displaying images")
       document.getElementById("prag").append(c)
 
       document.getElementById("prag").append(ebr)
 
 
-      document.getElementById("prag").append(d)
+   
 
       document.getElementById("ram").append(c)
       b.onclick = async(event) =>{
         var thing = event.target.tid;
         await getaaa.methods.buyThing(thing).send({from:accounts[0]});
-       alert("Token Purchased Id" + thing)
+       console.log("Token Purchased Id" + thing)
         
       }
 
@@ -178,13 +178,8 @@ function Saleimagepage() {
 
 		<form onSubmit={onSubmitNFT} id="create-course-form" >
 
-
-<button 
-             type="submit"> 
-             Press Button To Get sales images
-             </button>
-
 </form>
+
 
 
 

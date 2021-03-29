@@ -1,4 +1,4 @@
-import React from "react";
+import React,{ useState } from "react";
 import { Router, Route, Switch } from "react-router-dom";
 import history from "./utils/history";
 
@@ -10,12 +10,16 @@ import Printallimage from "./Printallimage";
 import Approveaddresspage from "./Approveaddresspage";
 import Salepage from "./Salepage";
 import Saleimagepage from "./Saleimagepage";
+import Second from "./Second";
+import getca from "./cabi";
 
 function App() {
+  
   return (
     <div class="container h-100 d-flex justify-content-center">
       <div class="jumbotron my-auto">
-
+      
+  
         <center>
 
           <br></br>
@@ -110,6 +114,15 @@ function App() {
               >
                 Sales Image page    
               </button>
+              <button
+                class="btn btn-info btn-block"
+                type="button"
+                onClick={() => {
+                  history.push("/Second");
+                }}
+              >
+                Onload image    
+              </button>
 
 
 
@@ -138,6 +151,9 @@ function App() {
             </Route>
             <Route path="/Saleimagepage">
               <Saleimagepage />
+            </Route>
+            <Route path="/Second">
+              <Second />
             </Route>
           </Switch>
         </Router>

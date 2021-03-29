@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import history from "./utils/history";
 
 //import {useState} from 'react';
@@ -15,135 +15,30 @@ import getaaa from "./cabi";
 
 
 function Salepage() {
-  const[tokenstate,settokenstate] = useState("");
 
 
-  //const [toaddress] = useState("");
-  //const [tid,setId] = useState("");
-  //const [turi,setUri] = useState("");
-  //const [tname,setName] = useState("");
-  //const [tsymbol,setSymbol] = useState("");
-  //const [tokenuri,setTokenUri] = useState("");
-  //var [getimageurl,setgetImage] = useState("");
-  //const [tfile,setTfile] = useState("");
-  //const [ipfsHash,setIpfsHash] = useState(null);
-  //var [buffer,setBuffer] = useState("");
-  //const [ethAddress,setEthAddress] = useState("");
-  //const [blockNumber,setBlocknumber] = useState("");
-  //const [transactionHash,setTransaction] = useState("");
-  //const [gasUsed,setGasUsed] = useState("");
-  //const [txReceipt,se] = useState("");
-
-  //const [dataset,setdatas] = useState("");
-
-  //const [address,setaddress] = useState("");
-  //const [geta,setgeta] = useState("");
-
-  //var [printgeta,setgetaprint] =useState("");
-  //var [printgeta2,setgetaprint2] =useState("");
-
-  //var [printgeta3,setgetaprint3] =useState("");
-  //var [printgeta4,setgetaprint4] =useState("");
-
-  //var [selectedImages,setSelectedImages] = useState([]);
+ 
+  var names=[];
+ const [afternames,setAfternames] = useState([]);
+ const [name,setnames] = useState([]);
+ const [tid,setId] = useState(""); 
+ 
 
 
-  //const [imgurl,setimgurl] = useState([]);
-
-
-  
-
-  
-  //var [p,setp] =useState("");
-
-  var names = [];
-  var afternames=[];
-
-  var salesave = [];
-  const pp =[];
-
-  var k=useState("");
-  //const namesc = [];
-
-  //const edho = (source) =>{
-    //  return  selectedImages.map((photo) => {
-      //    return <img src={photo} key={photo}/>
-
-      //})
-    //};
+   useEffect(()=>{onSubmitNFT()},[])
+      const onSubmitNFT = async () => {
+    
+    
+      console.log("waiting for pic url");
         
-      
-  
-    
-      //new write below
-
-      //const componentDidMount = () =>(event){
-        
-        // your source code to load initial data
-
-        
-   // }
-
-
-      const onSubmitNFT = async (event) => {
-    
-    
-      alert("waiting for pic url");
-    
-      //var ta=tname;
-      //var tb=tsymbol;
-      //var tc='https://ipfs.io/ipfs/'+ipfsHash;
-      //var td=toaddress;
-      //var te=tid;
-      //var tf='https://ipfs.io/ipfs/'+ipfsHash;
-      
-      
-    
-      //alert("im work ta tb tc  td te tf  "+ta+" "+tb+" "+tc+" "+td+" "+te+" "+tf);
-    
-      event.preventDefault();
-    
-      //const accounts = await  web3.eth.getAccounts();
-    
-    
-        
-    alert("completed");    
-    
-    
-    alert("check"+localStorage.getItem('myData'));
-
-
-    //var poda=localStorage.getItem('myData');
-
-   
-
-
-
-    //add con add below
-
-    //setaddress(localStorage.getItem('myData'));
-    
-  
-
-
-   // alert("after abi"+poda);
-    
-  //  var getaaa=new web3.eth.Contract(abi,poda);
-    
-    alert("geta"+getaaa);
-   
-    event.preventDefault();
+    console.log("completed");    
+ 
     
     const accounts = await web3.eth.getAccounts();
 
-    alert(accounts[0])
+    console.log(accounts[0])
 
 
-        //await geta.methods.tokenURI(te).send({
-    //from: accounts[0]
-    //value: this.setState({c:accounts[0]})
-    
-    //});
 
 
 
@@ -157,144 +52,67 @@ function Salepage() {
         names.push(printgeta[i]);
 
       }
+      setnames(names);    
+      //console.log("split owner address  "+printgeta.length)
 
-      //alert("split owner address  "+printgeta.length)
-
-      alert("owner address"+printgeta)
+      console.log("owner address"+printgeta)
 
 
       
-
+      var after =[];      
       for(i=0;i<printgeta.length;i++){
 
-        //var nameget=names[i];
+        after.push(await getaaa.methods.tokenURI(names[i]).call());
 
-
-        afternames.push(await getaaa.methods.tokenURI(names[i]).call());
-
-        event.preventDefault();
-
-        //alert("alert kulla "+afternames.push(await getaaa.methods.tokenURI(names[i]).call()))
-
-        alert(names[i])
+        console.log(names[i])
 
       }
+      setAfternames(after)
+  
+  console.log(after.length)
 
-
-      for(i=0;i<afternames.length;i++){
-
-        alert("urllll      "+afternames[i])
-      }
-
-
-      //var j=0;
-
-      //var b;
-
-//      for(k=0;k<afternames.length;k++){
-
-        //var a=document.createElement("img")
-
-        //b=document.createElement("button")
-
-        //a.id=afternames[k]
-
-        
-        //alert(b.id)
-
-        //b.widt=500
-        //b.height=500
-
-        //a.src=afternames[k]
-        //a.width=400
-        //a.height=400
-
-        //document.getElementById("prag").append(a)
-
-        //document.getElementById("ram").append(b)
-
-
-        //b.onclick = () =>{
-
-        
-          //alert(this.event.id)
-        //}
-
-        //a.onclick = () =>{
-            //alert("image click"+afternames[j])
-            //alert(afternames[j])
-
-
-        //}
-      
-        //b.onclick = () => {
-
-          //  alert("onclick work"+afternames[j]);
-//            salesave.push()
-
-
-        //}
-      //setgetaprint(names[i]);
-
-      //alert(names[i]);
-      //alert(selectedImages[i]);
-
-    //}  
-
-
-   //var tokenstate=settokenstate(await getaaa.methods.setTokenState([isd],"true").send({from:accounts[0]}));
-
-    
-   
-}
-
-function hello(event){
-
-  alert(afternames.length)
-
-  for(var i=0 ;i<afternames.length;i++)
+  for(var i=0 ;i<after.length;i++)
   {
-
-     
-
       var a=document.createElement("img")
+      var t = document.createElement("textbox")
       
       var  b=document.createElement("button")
 
       var  c=document.createElement("li")
 
-      var  d=document.createElement("li")
-
       var  ebr=document.createElement("br")
 
 
 
-        //a.id=afternames[k]
+      const pricea = await getaaa.methods.items(names[i]).call(); 
+      var pa = pricea.state;
 
-        
-        //alert(b.id)
-
-        //b.widt=500
-        //b.height=500
-        //b.setAttribute("value",)
-
-
+      if(pa == 1){
+        t="Already Sale Enabled and price sets";
+      }
+      else{
         b.innerHTML="Enable Sale";
+      }
+
+       
+        
     
 
-        a.src=afternames[i]
-        a.id=afternames[i]
+        a.src=after[i]
+        a.id=after[i]
         a.tid = names[i]
         a.width=400
         a.height=400
         
-        b.src=afternames[i]
-        b.id=afternames[i]
+        b.src=after[i]
+        b.id=after[i]
         b.tid = names[i]
         c.style.listStyleType="none"
         c.append(a)
         c.append(ebr)
+        c.append(t)
         c.append(b)
+       
         
                
 
@@ -302,18 +120,12 @@ function hello(event){
 
         document.getElementById("prag").append(ebr)
 
-
-        document.getElementById("prag").append(d)
-
         document.getElementById("ram").append(c)
 
 
         a.onclick = (event) =>{
 
-        
-          hello1(event.target.id)
-
-          alert(event.target.id)
+          console.log(event.target.id)
         // pp.push(afternames.pop(event.target.tid))
            
           
@@ -321,57 +133,32 @@ function hello(event){
         
         b.onclick = async(event) =>{
           var isd = event.target.tid;
-		  alert(event.target.tid)
+		  console.log(event.target.tid)
 		  const accounts = await  web3.eth.getAccounts();
-         await getaaa.methods.setTokenState([isd],"true").send({from:accounts[0]});
+      await getaaa.methods.setTokenState([isd],"true").send({from:accounts[0]});
          // salepage.settokenstate();
-		  alert("checking")
+		  console.log("checking")
 		  var price = window.prompt("enter the price for your token");
 		  await getaaa.methods.setTokenPrice([isd],price).send({from:accounts[0]})
 		const priceamount = await getaaa.methods.items(isd).call();
-		  alert(priceamount.price)
+		  console.log(priceamount.price)
          
           
         }
 
         
-    //alert(afternames[i])
+    //console.log(afternames[i])
 
 
 
-  }
+  
 
 
-  function hello1(getvalue){
+  
+ 
 
-    alert(getvalue)
+      } 
 
-  }
-
-  //var a=document.createElement("img")
-
-  //var b=document.createElement("button")
-
-
-
-
-  //b.widt=500
-    //    b.height=500
-
-      //  a.src=afternames[i]
-//        a.width=400
-  //      a.height=400
-
-    ///    document.getElementById("prag").append(a)
-
-       // document.getElementById("ram").append(b)
-
-
-
-  //const id=event.target.id;
-  //alert(id)
-
-//}
 }
   
 
@@ -380,7 +167,10 @@ function hello(event){
     <div className="App">
 
 
+     
+      
 <h1>Print Your NFT Image</h1>
+
 
 
 
@@ -446,10 +236,6 @@ function hello(event){
 		<form onSubmit={onSubmitNFT} id="create-course-form" >
 
 
-<button 
-             type="submit"> 
-             Press Button To Get Your NFT Image Print
-             </button>
 
 </form>
 
@@ -506,7 +292,6 @@ function hello(event){
 
 
 
-<button id="ramm" onClick={hello}>click button</button>
 
 
     
