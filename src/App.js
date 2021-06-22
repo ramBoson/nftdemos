@@ -621,6 +621,29 @@ const App=() => {
                Connect wallet
               </button>
               {" "}
+              <br></br><br></br>
+              <Link
+              to="/transferalgo">
+              <button
+                class="btn btn-info btn-block"
+                type="button"
+                // 
+              >
+               Transfer
+              </button>
+              </Link>
+              {" "}
+              <Link
+              to="/testingalgo">
+              <button
+                class="btn btn-info btn-block"
+                type="button"
+                // 
+              >
+               SetPrice
+              </button>
+              </Link>
+              {" "}
 {/* <h2>Welcome</h2> */}
 {/* <button onClick={handleLogout}>Logout</button> */}
 {/* </nav> */}
