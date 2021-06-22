@@ -3896,7 +3896,7 @@ setIsOpen(true);
     <div className="App"  >
 <div style={{backgroundColor:'white',height:'70px',width:'1500px',marginBlock:'5px',display:'flex'}}>
 {/* <div style={{backgroundColor:'white',height:'43px',width:'1017px',marginLeft:'20px',marginBlock:'15px', display:'-webkit-inline-flex'}}> */}
-<div style={{backgroundColor:'white',height:'43px',width:'1050px',marginLeft:'150px',marginBlock:'15px'}}>
+<div style={{backgroundColor:'white',height:'43px',width:'1050px',marginLeft:'150px',marginBlock:'15px',fontSize:'5px'}}>
 <Link
               to="/">
 
@@ -4022,7 +4022,7 @@ setIsOpen(true);
 
               {" "}
 
-              <button
+              <button 
               id="bu"
                 class="btn btn-info btn-block"
                 type="button"
