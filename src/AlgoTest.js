@@ -932,16 +932,19 @@ const getalgoold=()=>{
       {/* style={{backgroundColor:"white"}} */}
 
       <button onClick={getalgoold}>GetAssetOld</button>
-<br></br><br></br><br></br>
+{/* <br></br><br></br><br></br> */}
+&nbsp&nbsp&nbsp&nbsp&nbsp
 <button onClick={getalgo}>GetAsset</button>
-<br></br><br></br>
+&nbsp&nbsp&nbsp&nbsp&nbsp
+{/* <br></br><br></br> */}
 <button onClick={opt}>GetOpt</button>
 {/* <button onClick={chec}>alert</button>
 <br></br><br></br>
 <button onClick={checs}>alert2</button>
 <br></br><br></br>
 <button onClick={checss}>alert2</button> */}
-<br></br><br></br>
+{/* <br></br><br></br> */}
+&nbsp&nbsp&nbsp&nbsp&nbsp
 {/* <button onClick={checb1}>button1</button>
 <br></br><br></br>
 <button onClick={checb2}>button2</button>
@@ -949,9 +952,11 @@ const getalgoold=()=>{
 <button onClick={checb3}>button3</button>
 <br></br><br></br> */}
 <button onClick={trans}>trans</button>
-<br></br><br></br>
+{/* <br></br><br></br> */}
+&nbsp&nbsp&nbsp&nbsp&nbsp
 <button onClick={checasss}>buttonass</button>
-<br></br><br></br>
+{/* <br></br><br></br> */}
+&nbsp&nbsp&nbsp&nbsp&nbsp
 {/* <button onClick={checb5}>button5</button> */}
 {/* {getAlgoss.length === 0 ? null :(  */}
   <div style={{backgroundColor:'black',display:'flex',flexWrap:'wrap'}}>
