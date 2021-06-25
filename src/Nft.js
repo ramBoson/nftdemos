@@ -12,10 +12,7 @@ import Popup from './Popup';
 import nextId from "react-id-generator";
 import {Button, Container, Header, Message} from "semantic-ui-react";
 //import { NFTStorage, File } from 'nft.storage'
-
 function Nft() {
-
-
 //   const captureFile2=async(event)=> {
 //     // event.preventDefault()
 //     // //const file = event.target.files[0]
