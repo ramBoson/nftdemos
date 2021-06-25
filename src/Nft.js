@@ -3,16 +3,80 @@ import './App.css';
 import React, { useState,useEffect,useCallback } from "react";
 import web3 from './web3';
 import lottery from './nftcontract';//this line import lottery folder
-//import lottery2 from './helloworldcontract';//this line import lottery folder
+import lottery2 from './helloworldcontract';//this line import lottery folder
 import ipfs from './ipfs';
 import { Router, Route, Switch,Link } from "react-router-dom";
 import fireDb from './firebase';
 import Compress from "react-image-file-resizer";
 import Popup from './Popup';
-//import nextId from "react-id-generator";
-//import {Button, Container, Header, Message} from "semantic-ui-react";
+import nextId from "react-id-generator";
+import {Button, Container, Header, Message} from "semantic-ui-react";
+//import { NFTStorage, File } from 'nft.storage'
 
 function Nft() {
+
+
+//   const captureFile2=async(event)=> {
+//     // event.preventDefault()
+//     // //const file = event.target.files[0]
+//     // const reader = new window.FileReader()
+//     // reader.readAsArrayBuffer(file)
+//     // reader.onloadend = () => {
+//     //   //this.setState({ buffer: Buffer(reader.result) })
+//     //   console.log('buffer', buffer)
+//     // }
+
+     
+//     // const pr=new CID('QmbWqxBEKC3P8tqsKc98xmWNzrzDtRLMiMPL8wBuTGsMnR').toV1().toString()
+//     // console.log(pr)
+
+//     // const CID = require('cids')
+//     // var cid = new CID('QmUi22ZoR1o1TVQfubwLT7kr42uNAJNqV5STPXA6ibBQmq')
+//     // console.log( cid.toV1().toBaseEncodedString('base32'));
+
+//     // const apiKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweDI5RThhQkI4NzI4ODZhNjBkRWQ0MTI1RDYxNzA5NTMwOTgwNTUwNDIiLCJpc3MiOiJuZnQtc3RvcmFnZSIsImlhdCI6MTYyNDU1OTU2OTYwNiwibmFtZSI6ImRlbW9rZXkifQ.25DslAudtH8PWQJMeIqBYAeRPV3uT3i8avwTGLKY8ls'
+// // const client = new NFTStorage({ token: apiKey })
+
+// // const metadata = await client.store({
+// //   name: 'Pinpie',
+// //   description: 'Pin is not delicious beef!',
+// //   image: new File([/* data */], 'pinpie.jpg', { type: 'image/jpg' })
+// // })
+// // console.log(metadata.url)
+
+//     const url = 'https://api.pinata.cloud/data/testAuthentication';
+//     return axios
+//         .get(url, {
+//             headers: {
+//                 pinata_api_key: '88348e7ce84879e143e1',
+//                 pinata_secret_api_key: 'e4e8071ff66386726f9fe1aebf2d3235a9f88ceb4468d4be069591eb78d4bf6f'
+//             }
+//         })
+//         .then(function (response) {
+//             //handle your response here
+//             console.log("response",response)
+//         })
+//         .catch(function (error) {
+//             //handle error here
+//         });
+
+//   }
+
+  // const onSubmit2=(event)=> {
+  //   event.preventDefault()
+  //   ipfs.files.add(buffer, (error, result) => {
+  //     if(error) {
+  //       console.error(error)
+  //       return
+  //     }
+  //     //this.simpleStorageInstance.set(result[0].hash, { from: this.state.account }).then((r) => {
+  //       //return this.setState({ ipfsHash: result[0].hash })
+  //       console.log('ifpsHash', ipfsHash)
+  //     })
+  //   }
+    
+
+  const axios = require('axios');
 
   const [adds,setadds]=useState([]);
   const [isWork, setisWork] = useState(false)
@@ -37,44 +101,85 @@ function Nft() {
 
   let btn;
   var accounts;
+  
+
+  const connectalgo = async () => {
+
+    let getchange='';
+    AlgoSigner.connect()
+    .then((d) => {
+
+      AlgoSigner.accounts({
+        ledger: 'TestNet'
+      })
+      .then((d) => {
+        
+      accounts = d;
+      getchange=accounts[0].address;
+
+      localStorage.setItem("algoaddress",getchange);
+      console.log("algo address",getchange)
+
+      if(getchange!=''){
+        btn= document.getElementById("bualgo");
+      //btn.value = accounts[0]; // will just add a hidden value
+      //btn.innerHTML = accounts[0];
+      btn.innerHTML = getchange;
+      localStorage.setItem('myaddressalgo', getchange);
+      }
+      else{
+
+        var btns = document.getElementById("bualgo");
+      //btns.value = accounts[0]; // will just add a hidden value
+      btns.innerHTML = "NOT CONNECTED";
+      localStorage.setItem('myaddressalgo', "");
+
+      }
+
+      })
+      .catch((e) => {
+        console.error(e);
+      });
+
+      
+    })
+    .catch((e) => {
+      console.error(e);
+    });
+  
+    
+    
+    // let localalgo=localStorage.getItem("algoaddress");
+
+    // if(localalgo !== ""){
+
+    //   //accounts[0
+    //   //document.getElementById("bu").
+    //   //document.getElementById("bu").append("CONNECTED")
+
+    //   btn= document.getElementById("bualgo");
+    //   //btn.value = accounts[0]; // will just add a hidden value
+    //   //btn.innerHTML = accounts[0];
+    //   btn.innerHTML = localalgo;
+    //   localStorage.setItem('myaddressalgo', localalgo);
+    // }
+    // else{
+    //   //document.getElementById("bu").remove("");
+    //   //document.getElementById("bu").replaceWith("NOT CONNECTED")
+    //   var btns = document.getElementById("bualgo");
+    //   //btns.value = accounts[0]; // will just add a hidden value
+    //   btns.innerHTML = "NOT CONNECTED";
+    //   localStorage.setItem('myaddressalgo', "");
+    // }
+
+};    
+//useEffect(()=>{connectalgo()},[])
+
 
 const connectmm = async () => {
-
-
-    //var getaddress=localStorage.getItem('myaddress')
-
-    //if(getaddress !== ""){
-
-
-      //var btn = document.getElementById("bu");
-        //btn.value = accounts[0]; // will just add a hidden value
-        //btn.innerHTML = accounts[0];
-        //btn.innerHTML = "CONNECTED"
-
-
-
-    //}
-    //else{
-
-
-      //window.alert("Do you want to connect with metamask");
-
-
-      //event.preventDefault();
-     //bring in user's metamask account address
-
-     
-
-     //const demo=await getaaa.methods.setTokenPrice([isd],price).send({from:accounts[0]})
-
-      
-      //alert("acc"+accounts[0])
-
+    
       accounts = await web3.eth.getAccounts();//.send({from:accounts[0]})
-
       if(accounts[0] !== ""){
-
-      
 
         //accounts[0
         //document.getElementById("bu").
@@ -106,6 +211,8 @@ const connectmm = async () => {
   const [tname,setName] = useState("");
   const [tsymbol,settSymbol] = useState("");
   const [ipfsHash,setIpfsHash] = useState(null);
+  const [tdes,setDes] = useState("");
+  
   var [buffer,setBuffer] = useState("");
   let tf;
   let [Img,setImg] = useState("")
@@ -113,43 +220,73 @@ const connectmm = async () => {
   //start
 
 
+  
   const captureFile =(event) => {
     event.stopPropagation()
     event.preventDefault()
     const file = event.target.files[0]
-    let reader = new window.FileReader()
-
+  let reader = new window.FileReader()
     Compress.imageFileResizer(file, 300, 300, 'JPEG', 10, 0,
     uri => {
       console.log("iuri",uri)
-setImg(uri)
+      setImg(uri)
     },
     'base64'
     );
     reader.readAsArrayBuffer(file)
     reader.onloadend = () => convertToBuffer(reader);    
+    console.log(reader)
+    
   };
+  //cons
+  // const reader=new window.FileReader();
+  // reader.readAsArrayBuffer(file)
 const convertToBuffer = async(reader) => {
   //file is converted to a buffer for upload to IPFS
     const buffer = await Buffer.from(reader.result);
   //set this buffer -using es6 syntax
     setBuffer(buffer);
+
+    onSubmitImage();
 };
 const onSubmitImage = async (event) => {
-  event.preventDefault();
+ // const buffer = Buffer.from(reader.result);
+  //set this buffer -using es6 syntax
+    setBuffer(buffer);
+  alert("capture")
+  //event.preventDefault();
  //bring in user's metamask account address
-  const accounts = await web3.eth.getAccounts();
- 
-  console.log('Sending from Metamask account: ' + accounts[0]);
-
-  await ipfs.add(buffer, (err, ipfsHash) => {
-    console.log(err,ipfsHash);
-
-    console.log("buff",buffer);
+  //const accounts = await web3.eth.getAccounts();
+  //console.log('Sending from Metamask account: ' + accounts[0]);
+  // await ipfs.add(buffer, (err, ipfsHash) => {
+  //   console.log(err,ipfsHash);
+  //   console.log("buff",buffer);
+  //   setIpfsHash(ipfsHash[0].hash);
+  //   console.log(ipfsHash[0].hash)
+  //   const CID = require('cids')
+  //   var cid = new CID(ipfsHash)
+  //   console.log( cid.toV1().toBaseEncodedString('base32'));
+  // }) 
 
   
-    setIpfsHash(ipfsHash[0].hash);
-  }) 
+    await ipfs.add(buffer, (err, ipfsHash) => {
+      console.log(err,ipfsHash);
+      console.log("buff",buffer);
+      setIpfsHash(ipfsHash[0].hash);
+      console.log(ipfsHash[0].hash)
+      const CID = require('cids')
+      var cid = new CID(ipfsHash[0].hash)
+      //let ccp=cid.toV1().toBaseEncodedString('base32');
+      console.log( cid.toV1().toBaseEncodedString('base32'));
+    });
+  //   }).then((d)=> {
+  //     alert("console")
+  //     //onSubmitNFT();
+  // })
+  // .catch(function (error) {
+  //     //handle error here
+  // });
+
 }; 
 //end
 
@@ -157,6 +294,13 @@ const onSubmitImage = async (event) => {
 
    const onSubmitNFT = async (event) => {
 
+    //captureFile();
+
+    //convertToBuffer();
+
+    //onSubmitImage();
+
+    
     setLoading(true);
   
     event.preventDefault();
@@ -172,6 +316,11 @@ const onSubmitImage = async (event) => {
       var td=toaddress;
       //var te=tid;
       tf='https://ipfs.io/ipfs/'+ipfsHash;
+      let tdescription=tdes;
+
+    
+      //console.log('https://ipfs.io/ipfs/'+ccp)
+
       
       let ref23=fireDb.database().ref(`tokenkey`);      
       let getfire="";
@@ -3792,7 +3941,7 @@ const printAssetHolding = async function (algodclient, account, assetid) {
     // integer number of decimals for asset unit calculation
     let decimals = 0;
     // total number of this asset available for circulation   
-    let totalIssuance = 1000;
+    let totalIssuance = 1;
     // Used to display asset units to user    
     let unitName = currentSymbol;
     // Friendly name of the asset    
@@ -3888,6 +4037,28 @@ setIsOpen(true);
 }
 
 
+const testax=()=>{
+
+    
+
+  const url = `https://api.pinata.cloud/data/testAuthentication`;
+  return axios
+      .get(url, {
+          headers: {
+              pinata_api_key: '16c67ab08c2dc2f36e8c',
+              pinata_secret_api_key: 'QmfWzpNPhwVA6o7Hqh5i2XiJHskpSExQounXmmaRqm9VNB'
+          }
+      })
+      .then(function (response) {
+          //handle your response here
+      })
+      .catch(function (error) {
+          //handle error here
+      });
+
+  }
+
+
   // const handleLogout=()=>{    
   //   fireDb.auth().signOut();    
   //     }
@@ -3896,7 +4067,7 @@ setIsOpen(true);
     <div className="App"  >
 <div style={{backgroundColor:'white',height:'70px',width:'1500px',marginBlock:'5px',display:'flex'}}>
 {/* <div style={{backgroundColor:'white',height:'43px',width:'1017px',marginLeft:'20px',marginBlock:'15px', display:'-webkit-inline-flex'}}> */}
-<div style={{backgroundColor:'white',height:'43px',width:'1050px',marginLeft:'150px',marginBlock:'15px',fontSize:'5px'}}>
+<div style={{backgroundColor:'white',height:'43px',width:'1050px',marginLeft:'150px',marginBlock:'15px'}}>
 <Link
               to="/">
 
@@ -4022,7 +4193,7 @@ setIsOpen(true);
 
               {" "}
 
-              <button 
+              <button
               id="bu"
                 class="btn btn-info btn-block"
                 type="button"
@@ -4032,13 +4203,34 @@ setIsOpen(true);
 
               {' '}
               
+              <button
+              id="bualgo"
+                class="btn btn-info btn-block"
+                type="button"
+                onClick= {connectalgo}>
+               Connect wallet
+              </button>
 
-              {/* <button onClick={handleLogout}>Logout</button> */}
+              {' '}
+
+              {/* <button onClick={testax}>LTest</button> */}
 
 
 
 
               <br></br>
+              {/* <Link
+to="/demoex">
+              <button
+                class="btn btn-info btn-block"
+                type="button"
+                // onClick={() => {
+                //   history.push("/Nft");
+                // }}
+              >
+               test
+              </button>
+              </Link> */}
 <br></br>
       
 
@@ -4105,6 +4297,19 @@ id="nameid"
 <br></br>
 <br></br>
 
+<label for="name">NFT  Description    </label>
+	  &nbsp;&nbsp;
+<input
+id="descriid"
+  type='text'
+  name="tdescri"
+  required
+  onChange={event => setDes(event.target.value)}
+  
+/>
+<br></br>
+      <br></br>
+
 
 
 {/* <label for="id">NFT Token-Id   {' '}   </label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -4122,7 +4327,7 @@ id="idid"
 <br></br> */}
 
 
-<form onSubmit={onSubmitImage}>
+{/* <form onSubmit={onSubmitImage}> */}
 
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label for="images">Choose Your Image     </label>
@@ -4131,46 +4336,42 @@ id="idid"
              name="tfile" id="fileid" type = "file" onChange = {captureFile} required />
 			
              {/* <button 
+             onClick={onSubmitImage}
              type="submit"> 
              Upload Image NFT
              </button> */}
 			 <br></br>
 			 <br></br>
 			 <br></br>
-	</form>
 
-
-
-  {/* {isLoading ? "":
-              (<button  */}
-              <button
-                type="submit"> 
-                Create NFT
-                </button>
-   {/* )} */}
+              
   
   <br></br><br></br>
-
-
-  {/* <button onClick={GetAccountss}>GETACC</button> */}
-
      
   <br></br><br></br>
 
-  
+  <button
+                type="submit"> 
+                Create NFT
+                </button>
 
-{/* <button 
-
-
-
-
-             type="submit"> 
-             Upload and Create NFT
-
-             </button> */}
 
 </form>
 
+
+{/* <button 
+             onClick={convertToBuffer}
+             type="submit"> 
+             Buffer NFTs
+             </button> */}
+
+
+
+{/* <button 
+             onClick={captureFile2}
+             type="submit"> 
+             Capture 2
+             </button> */}
 
 {/* <button type="submit" onClick={CheckAlgoSigner}> Check NFT Algorand </button> */}
 
