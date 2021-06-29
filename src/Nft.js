@@ -9,7 +9,7 @@ import { Router, Route, Switch,Link } from "react-router-dom";
 import fireDb from './firebase';
 import Compress from "react-image-file-resizer";
 import Popup from './Popup';
-import nextId from "react-id-generator";
+//import nextId from "react-id-generator";
 import {Button, Container, Header, Message} from "semantic-ui-react";
 //import { NFTStorage, File } from 'nft.storage'
 function Nft() {
